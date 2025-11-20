@@ -21,19 +21,6 @@
     "BOT_TOKEN": {
       "description": "Your BotFather Telegram BOT TOKEN",
       "required": true
-    },
-    "DEBUG": {
-      "description": "Set to true to enable debug mode",
-      "value": "false"
-    }
-  },
-  "scripts": {
-    "postdeploy": "python main.py"
-  },
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "free"
     }
   }
 }
