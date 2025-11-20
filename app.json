@@ -1,34 +1,39 @@
 {
   "name": "Kunal-txt1",
-  "description": "Deploy of Kunal-txt1 Python app",
+  "description": "Deploy of Kunal-txt1 Python Telegram Bot",
   "repository": "https://github.com/nikhilkumarray2010-a11y/Kunal-txt1",
   "logo": "https://raw.githubusercontent.com/nikhilkumarray2010-a11y/Kunal-txt1/main/thumbnai.png",
-  "keywords": ["python", "heroku", "webapp"],
+  "keywords": ["python", "heroku", "telegram-bot"],
   "buildpacks": [
     {
       "url": "heroku/python"
     }
   ],
   "env": {
+    "API_ID": {
+      "description": "Your Telegram API ID from my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Your Telegram API HASH from my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Your BotFather Telegram BOT TOKEN",
+      "required": true
+    },
     "DEBUG": {
       "description": "Set to true to enable debug mode",
       "value": "false"
-    },
-    "DATABASE_URL": {
-      "description": "Database connection URL (if any)",
-      "value": ""
     }
   },
   "scripts": {
     "postdeploy": "python main.py"
   },
   "formation": {
-    "web": {
+    "worker": {
       "quantity": 1,
       "size": "free"
     }
-  },
-  "addons": [
-    "heroku-postgresql"
-  ]
+  }
 }
